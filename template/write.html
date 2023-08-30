@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+
+{% block body %}
+</div>
+<div class="container" style="width: 50%; text-align: center; height: fit-content; position: relative;">
+    <form action="" method="post" class="form-control" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+        {% csrf_token %}
+        Title
+        <input type="text" , name="title", style="width: 100%;"><br>
+        Author
+        <input type="text" , name="author" style="width: 100%;"><br>
+        Category <select class="form-control" name="cat">
+            <option value="">Select Category</option>
+            {% for cat in cat %}
+            <option value="{{ cat.id }}">{{ cat.catagory }}</option>
+            {% endfor %}
+        </select><br>
+        Content
+        <textarea rows="20" col="33" name="content" style="width: 100%; margin-bottom: 30px;"></textarea><br>
+        <a href="" class="but" style="color: black; " type="submit"><span><button type="submit">ADD</button></span><i></i></a>
+    </form>
+</div>
+{% endblock body %}

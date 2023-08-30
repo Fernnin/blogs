@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
+    <style>
+        .box {
+            height: 100%;
+            margin-bottom: 100px;
+            /* color: white; */
+        }
+
+        h5 {
+            color: grey;
+        }
+
+        span {
+            color: grey;
+        }
+
+        .lead {
+            color: white;
+            text-decoration: none;
+        }
+
+        .display-4 {
+            color: white;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: grey;
+        }
+
+        .row {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+
+        #to_top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+        }
+
+        .vl {
+            border-left: 6px solid grey;
+            height: 500px;
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            margin-top: 4%;
+        }
+
+        .card {
+            color: white;
+        }
+
+        .navbar {
+            z-index: 99999;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            margin-top: -7%;
+            width: 100%;
+        }
+
+        .end {
+            height: 400px;
+            background-color: rgba(20, 20, 20, 0.7);
+            text-align: center;
+
+        }
+
+        #home_btn {
+
+            transition: 0.5s;
+            clip-path: polygon(6% 0, 58px 0%, 58px 100%, 6% 100%);
+        }
+
+        #home_btn:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            color: white;
+            text-decoration: none;
+        }
+
+        #tab {
+            transition: 0.5s;
+        }
+
+        #tab:hover {
+            border-bottom: 3px solid white;
+        }
+
+        .homeHead {
+            color: transparent;
+            margin-left: 10%;
+            width: 75%;
+            margin-top: 10%;
+            font-size: 110px;
+            -webkit-text-stroke: 1px white;
+            background-image: url(/static/back.png);
+            -webkit-background-clip: text;
+            background-position: 0 0;
+            animation: back 20s linear infinite;
+        }
+
+        @keyframes back {
+            100% {
+                background-position: 2000px 0;
+            }
+        }
+        .my_image {
+            background: url(/static/my\ image.jpg);
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            height: 400px;
+            width: 305px;
+            box-shadow: 0 20px 5px 5px rgba(0, 0, 0, 0.2);
+            animation: animate 10s ease-in-out infinite;
+            transition: all 2s ease-in-out;
+        }
+        @keyframes animate{
+            0%{
+                border-radius: 29% 71% 36% 64% / 67% 38% 62% 33% ;
+            }
+            50%{
+                border-radius: 40% 60% 68% 32% / 41% 69% 31% 59% ;
+            }
+            100%{
+                border-radius: 29% 71% 36% 64% / 67% 38% 62% 33% ;
+            }
+        }
+    </style>
+    <title>Anurag's portfolio</title>
+</head>
+
+<body
+    style="background-image: url(/static/body-background.jpg); background-attachment: fixed; overflow-x: hidden; background-size: cover;">
+
+
+    <div class="box">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand link-light" href="#">Anurag Singh</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <a class="nav-link active link-light justify-content-between" aria-current="page"
+                            href="/">Home</a>
+                        <a id="tab" class="nav-link link-light float-right focus-ring " href="#about">About</a>
+                        <a id="tab" class="nav-link link-light focus-ring" href="#skill">Skills</a>
+                        <a id="tab" class="nav-link link-light focus-ring" href="#qual">Qualification</a>
+                        <a id="tab" class="nav-link link-light focus-ring" href="#project">Projects</a>
+                        
+                        <button id="tab" class="btn" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+                            style="color: white;">Contact</button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="box" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -30%"
+            data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0"></div>
+
+        <!-- contact section -->
+
+
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
+            aria-labelledby="offcanvasBottomLabel" style="height: 70%;">
+            <div class="offcanvas-header">
+                <h5 class="display-3" id="offcanvasBottomLabel" style="margin-left: 40%">Get in touch</h5><br>
+
+
+            </div>
+            <div class="offcanvas-body" style="margin-left: 10%;">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>
+                            <p class="display-6">Email</p>
+                            <p class="lead" style="color: black;">chaudharyanurag70@gmail.com</p><br>
+                        </td>
+                        <td>
+                            <p class="display-6">Instagram</p>
+                            <a class="lead"
+                                href="https://instagram.com/a.n.u.r.a.g_c.h.a.u.d.h.a.r.y?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
+                                style="color: grey; text-decoration: none;"><img src="/static/instagram.svg" alt=""
+                                    style="width: 30px; height: 30px; "> a.n.u.r.a.g_c.h.a.u.d.h.a.r.y</a><br>
+                        </td>
+                    </tr>
+                </table>
+                <p class="display-6">Contact no.</p>
+                <p class="lead" style="color: black;">+91-7906343059</p><br>
+                <p class="display-6">Address</p>
+                <p class="lead" style="color: black;">AnandAshray Society, Phi-3, Greater Noida</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home page -->
+    <div style="height: 700px; margin-right: 90px; margin-top: auto;">
+        <table class="table table-borderless">
+            <tr>
+                <td style=" background-color: rgba(0, 0, 0, 0);" data-aos='fade-left'>
+                    <h1 class="homeHead">
+                        ANURAG SINGH</h1>
+                    <hr style="color:white;">
+                    <p class="display-6" style=" text-align: left; color: white; width: 75%; margin-left: 10%;">Web
+                        Developer
+                    </p>
+                    <p class="lead" style=" text-align: left; margin-left: 10%;">Hello! I'm Anurag,
+                        a
+                        passionate student and web developer. My love for technology led me to explore the
+                        world of web development, where I thrive on creating seamless user experiences.
+                        <br>Let's connect
+                        and inspire each other!
+
+                    </p><br>
+                    <button class="btn btn-secondary" type="button" id="home_btn" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+                        style="color: white; margin-left: 10%; width:fit-content"><img
+                            src="/static/paper-plane-solid.svg" alt="" style="width: 40px;height: 40px;"> Say
+                        Hello</button>
+
+                </td data-aos='fade-right'>
+                <td style="background: rgba(0, 0, 0, 0);">
+                    <div class="my_image"></div>
+                </td>
+            </tr>
+        </table>
+        <div style="text-align: center; width: 100%; ">
+            <a class="lead btn btn-secondary" id="home_btn"
+                href="https://www.linkedin.com/in/anurag-singh-24502117b"><img src="/static/linkedin-logo.png" alt=""
+                    style="width: 40px; height: 40px; "> Linkedin</a>
+            <a class="lead  btn btn-secondary" id="home_btn"
+                href="https://instagram.com/a.n.u.r.a.g_c.h.a.u.d.h.a.r.y?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
+                style="text-align: center; text-decoration: none;"><img src="/static/instagram.svg" alt=""
+                    style="width: 40px; height: 40px; "> instagram</a>
+        </div>
+
+    </div>
+
+    <!-- About section -->
+    <div>
+        <div class="box" data-aos='fade-right'>
+            <a href="#top" id="to_top" class="btn btn-secondary"><img src="/static/arrow-up-solid.svg" alt=""
+                    style="width: 15px; height: 20px;"></a>
+            <h1 class="display-4" id=about style=" text-align: center; margin-top: 10%;">About Me</h1>
+            <p class="lead" style="text-align: center;">My Introduction<br><br></p>
+            <p class="lead" style="text-align: center; width: 50%; margin-left: auto; margin-right: auto;">
+                I am a python fullstack web developer. I am familiar with web web framework django, html & css.
+                I also have basic knowledge of Data Structures and Algorithm using JAVA and PYTHON.
+                I have solved around 150+ question on gfg practice in DSA. <br>I use to play Kickboxing and MMA.
+            </p>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4"
+                style="margin-top: 50px; display: flex; justify-content: center; align-items: center; ">
+                <div class="card h-100" data-aos='fade-left'>
+                    <img src="/static/gfg.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">GFG DSA</h5>
+                        <p class="card-text">Rank 30 at college level</p>
+                        <a href="https://auth.geeksforgeeks.org/user/anurag_chaudhary" target="_blank"
+                            class="btn btn-outline-secondary focus-ring">My gfg profile</a>
+                    </div>
+                </div>
+                <div class="card h-100" style="margin-left: 5%;" data-aos='fade-right'>
+                    <img src="/static/resume.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">My resume</h5>
+                        <p class="card-text">click below to download my resume</p>
+                        <a href="/static/Resume.pdf" target="_blank"
+                            class="btn btn-outline-secondary  focus-ring ">My Resume</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Skills section-->
+            <div>
+                <h1 class="display-4" id=skill style=" text-align: center; margin-top: 5%;" data-aos='fade-up'>Skills
+                </h1>
+                <p class="lead" style="text-align: center; color: grey;" data-aos='fade-up'>My Technical Skills</p>
+                <div class="row row-cols-1 row-cols-md-3 g-4"
+                    style="margin-top: 50px; display: flex; justify-content: center; align-items: center;">
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/html.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">HTML</h5>
+                                <span>Advance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/CSS.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">CSS</h5>
+                                <span>Advance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/python.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Python</h5>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/java.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Java</h5>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/django.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Django</h5>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/bootstrap.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Bootstrap</h5>
+                                <span>Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- qualification section -->
+            <div class="box">
+                <h1 class="display-4" id=qual style=" text-align: center; margin-top: 5%;" data-aos='fade-left'>
+                    Educational Qualification</h1>
+                <div class="vl" data-aos='fade-down' ></div>
+                <div class="card" style="width: fit-content; margin-top: 5%; margin-left: 32%;">
+                    <div class="card-body" style="  color: grey;" data-aos='fade-left'>
+                        <h5 class="card-title">Under-Graduation</h5>
+                        <p class="card-text">IIMT College of Engineering,<br> Greater noida, Uttar
+                            Pradesh<br><br>2020-2024(expected)</p>
+                    </div>
+                </div>
+                <div class="card" style="width: fit-content;  margin-left: 51%;" data-aos='fade-right'>
+                    <div class="card-body" style="  color: grey;">
+                        <h5 class="card-title">Senior Secondary</h5>
+                        <p class="card-text">Kendriya Vidyalaya (AFS),<br> Bangalore,Karnataka <br><br>2020</p>
+                    </div>
+                </div>
+                <div class="card" style="width: fit-content; margin-left: 32%;" data-aos='fade-left'>
+                    <div class="card-body" style="  color: grey;">
+                        <h5 class="card-title">High School</h5>
+                        <p class="card-text">Kendriya Vidyalaya (AFS),<br> Bangalore,Karnataka <br><br>2018</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- projects -->
+            <div class="box">
+                <h1 class="display-4" id=project style=" text-align: center; margin-top: 5%;" data-aos='fade-left'>
+                    Projects</h1>
+                <div class="row row-cols-1 row-cols-md-3 g-4"
+                    style="margin-top: 50px; display: flex; justify-content: center; align-items: center;">
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/browser search.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Auto Browser Search</h5>
+                                <span>It is a program which automates the searching in browser</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-aos='fade-up'>
+                        <div class="card">
+                            <img src="/static/tic-tac-toe.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tic Tac Toe</h5>
+                                <span>A 2 player game made with using python and its GUI library</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end -->
+    <div class="end" data-aos="fade-up">
+        <p class="display-2" style="color: white; margin-bottom: 100px;" data-aos="fade-up">Anurag Singh</p>
+        <table class="table table-borderless" style="margin-left: auto; margin-right: auto; width:60%;">
+            <tr>
+                <td data-aos="fade-up" style="background-color: rgba(0, 0, 0, 0);"><a class="lead" href="#about"
+                        style="text-decoration: none;">About</a></td>
+                <td data-aos="fade-left" style="background-color: rgba(0, 0, 0, 0);"><a class="lead"
+                        href="#project">Project</a>
+                </td>
+                <td data-aos="fade-right" style="background-color: rgba(0, 0, 0, 0);"><a class="lead" href="#skill"
+                        class="lead">Skills</a>
+                </td>
+                <td data-aos="fade-down" style="background-color: rgba(0, 0, 0, 0);"><a href="" class="lead"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+                        style="color: grey;">Contact</a></td>
+        </table>
+        </table>
+    </div>
+    </div>
+
+    <script>
+        const tween = KUTE.fromTo(
+            '#blob1',
+            {path: '#blob1'},
+            {path: '#blob2'},
+            {repeat:999, duration: 3000, yoyo: true}
+        )
+        tween.start()
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
